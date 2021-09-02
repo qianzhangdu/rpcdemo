@@ -1,5 +1,13 @@
 一个简单rpc实现demo
 
+实现思路是:
+
+* 使用阻塞的socket IO流来进行server和client的通信，也就是rpc应用中服务提供方和服务消费方。并且是端对端的，用端口号来直接进行通信
+* 方法的远程调用使用的是jdk的动态代理
+* 参数的序列化也是使用的最简单的objectStream
+
+
+
 ## 框架
 ```
 public class RpcFramework {
