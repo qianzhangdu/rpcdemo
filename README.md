@@ -1,6 +1,7 @@
 一个简单rpc实现demo
 
 ## 框架
+```
 public class RpcFramework {
 
     /**
@@ -108,3 +109,4 @@ public class RpcFramework {
     }
 
 }
+```
