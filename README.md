@@ -110,3 +110,33 @@ public class RpcFramework {
 
 }
 ```
+
+## 服务暴露
+```
+public class RpcProvider {
+
+    public static void main(String[] args) throws Exception {
+        HelloService service = new HelloServiceImpl();
+        RpcFramework.export(service, 1234);
+    }
+
+}
+
+```
+
+## 服务调用
+```
+public class RpcConsumer {
+
+    public static void main(String[] args) throws Exception {
+        HelloService service = RpcFramework.refer(HelloService.class, "127.0.0.1", 1234);
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+            String hello = service.hello("World" + i);
+            System.out.println(hello);
+            Thread.sleep(1000);
+        }
+    }
+
+}
+
+```
